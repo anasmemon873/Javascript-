@@ -1467,9 +1467,6 @@
 // var lateamount = netamount + latepayment;
 // document.write("Gross Amount Payable (after Due Date): " + lateamount + "<br>");
 
-
-
-
 // ************Chapter 35-38************
 
 
@@ -1572,3 +1569,399 @@
 //     }
 // }
 // count()
+
+// **Question#8**
+
+// function hypotenuse(base, perpendicular) {
+//     function square(x) { return x * x; }
+//     return Math.sqrt(square(base) + square(perpendicular));
+// }
+// var base = parseInt(prompt("Enter base:"));
+// var perpendicular = parseInt(prompt("Enter perpendicular:"));
+
+// var result = parseInt(hypotenuse(base, perpendicular));
+// alert("The Hypotenuse is: " + result);
+
+
+// **Question#9**
+
+// function area(width, height) {
+//     return width * height;
+// }
+
+// // i. Passing arguments as values
+// console.log("Area (values):", area(5, 10));  
+
+// // ii. Passing arguments as variables
+// let w = 7;
+// let h = 4;
+// console.log("Area (variables):", area(w, h));
+
+
+
+// **Question#10**
+
+// function palindrome(str) {
+//     var cleaned = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+//     var reversed = cleaned.split('').reverse().join('');
+//     return cleaned === reversed;
+// }
+// var userInput = prompt("Enter a word or phrase:");
+// if (palindrome(userInput)) {
+//     alert(userInput + " is a palindrome.");
+// } else {
+//     alert(userInput + " is not a palindrome.");
+// }
+
+
+
+// **Question#11**
+
+// function upper(str) {
+//     var words = str.toLowerCase().split(" ");
+//     for (var i = 0; i < words.length; i++) {
+//         words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+//     }
+//     return words.join(" ");
+// }
+// var userInput = prompt("Enter a sentence:");
+// var result = upper(userInput);
+// document.write("Original String: " + userInput + "<br>");
+// document.write("Upper Case: " + result + "<br>");
+
+
+
+// **Question#12**
+
+// function longestWord(str) {
+//     var words = str.match (/\w[a-z]{0,}/gi);
+//     var longest = "";
+//     for (var i = 0; i < words.length; i++) {
+//         if (words[i].length > longest.length) {
+//             longest = words[i];
+//         }
+//     }
+//     return longest;
+// }
+// var userInput = prompt("Enter a sentence:");
+// var result = longestWord(userInput);
+// document.write("Original String: " + userInput + "<br>");
+// document.write("Longest Word: " + result + "<br>");
+
+
+
+// **Question#13**
+
+// function countLetter(str, letter) {
+//     var count = 0;
+//     for (var i = 0; i < str.length; i++) {
+//         if (str.charAt(i).toLowerCase() === letter.toLowerCase()) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// var userInput = prompt("Enter a sentence:");
+// var letter = prompt("Enter a letter to count its occurrences:");
+// var result = countLetter(userInput, letter);
+// document.write("Original String: " + userInput + "<br>");
+// document.write("Letter to count: " + letter + "<br>");
+// document.write("Number of occurrences of letter '" + letter + "': " + result + "<br>");
+
+
+
+// **Question#14**
+
+// function calcCircumference(radius) {
+//     let circumference = 2 * Math.PI * radius;
+//     let area = Math.PI * radius * radius;
+//     alert("The area is " + area.toFixed(2) + "\n" + "The circumference is " + circumference.toFixed(2));
+// }
+
+// let radius = parseFloat(prompt("Enter the radius of the circle:"));
+
+// calcCircumference(radius);
+
+
+
+
+// ************Chapter 39-42************
+
+// **Question#1**
+
+// function power(a, b) {
+//     let result = 1;
+
+//     for (let i = 1; i <= b; i++) {
+//         result = result * a;
+//     }
+
+//     return result;
+// }
+
+// alert(power(2, 3));  
+// alert(power(5, 2));  
+// alert(power(7, 0));  
+
+
+
+// **Question#2**
+
+// function LeapYear(year) {
+//     switch (true) {
+//         case (year % 400 === 0):
+//             return true;
+//         case (year % 100 === 0):
+//             return false;
+//         case (year % 4 === 0):
+//             return true;
+//         default:
+//             return false;
+//     }
+// }
+
+// let year = parseInt(prompt("Enter a year:"));
+
+// if (LeapYear(year)) {
+//     alert(year + " is a leap year.");
+// } else {
+//     alert(year + " is not a leap year.");
+// }
+
+
+// **Question#3**
+function removeVowels(sentence) {
+    let result = "";
+    let vowels = "aeiouAEIOU";
+
+    for (let i = 0; i < sentence.length; i++) {
+        if (!vowels.includes(sentence[i])) {
+            result += sentence[i]; // add non-vowel characters
+        }
+    }
+
+    return result;
+}
+
+// Example usage
+let sentence = prompt("Enter a sentence (max 25 characters):");
+if (sentence.length > 25) {
+    alert("Sentence is too long! Please enter 25 characters or less.");
+} else {
+    let noVowels = removeVowels(sentence);
+    alert("Sentence without vowels: " + noVowels);
+}
+
+
+
+
+// **Question#4**
+
+// function calculateAverage(subject1, subject2, subject3) {
+//     return (subject1 + subject2 + subject3) / 3;
+// }
+
+// function calculatePercentage(subject1 , subject2 , subject3) {
+//     let totalMarks = 300; 
+//     let obtainedMarks = subject1 + subject2 + subject3;
+//     return (obtainedMarks / totalMarks) * 100;
+// }
+
+// function mainFunction() {
+//     let subject1 = parseFloat(prompt("Enter marks of subject 1:"));
+//     let subject2 = parseFloat(prompt("Enter marks of subject 2:"));
+//     let subject3 = parseFloat(prompt("Enter marks of subject 3:"));
+
+//     let avg = parseInt(calculateAverage(subject1 , subject2 , subject3));
+//     let perc = calculatePercentage(subject1 , subject2 , subject3);
+
+//     alert("Average marks: " + avg + "\nPercentage: " + perc.toFixed(2) + "%");
+// }
+
+// mainFunction();
+
+
+
+// **Question#5**
+function countDoubleVowels(text) {
+    let count = 0;
+    text = text.toLowerCase(); // convert to lowercase for simplicity
+
+    for (let i = 0; i < text.length - 1; i++) {
+        let first = text[i];
+        let second = text[i + 1];
+
+        // check if both characters are vowels using switch
+        switch (true) {
+            case (first === 'a' || first === 'e' || first === 'i' || first === 'o' || first === 'u'):
+                switch (true) {
+                    case (second === 'a' || second === 'e' || second === 'i' || second === 'o' || second === 'u'):
+                        count++;
+                        break;
+                }
+                break;
+        }
+    }
+
+    return count;
+}
+
+// Example usage
+let sentence = prompt("Enter a line of text:");
+let doubleVowels = countDoubleVowels(sentence);
+alert("Number of occurrences of two vowels in succession: " + doubleVowels);
+
+
+
+
+// **Question#6**
+
+// function removeVowels(sentence) {
+//     var result = "";
+//     var vowels = "aeiouAEIOU";
+
+//     for (let i = 0; i < sentence.length; i++) {
+//         if (!vowels.includes(sentence[i])) {
+//             result += sentence[i]; // add non-vowel characters
+//         }
+//     }
+
+//     return result;
+// }
+
+// // Example usage
+// var sentence = prompt("Enter a sentence (max 25 characters):");
+// if (sentence.length > 25) {
+//     alert("Sentence is too long! Please enter 25 characters or less.");
+// } else {
+//     var noVowels = removeVowels(sentence);
+//     alert("Sentence without vowels: " + noVowels);
+// }
+
+
+
+// **Question#7**
+
+// function countDoubleVowels(text) {
+//     let count = 0;
+//     text = text.toLowerCase(); 
+
+//     for (let i = 0; i < text.length - 1; i++) {
+//         let first = text[i];
+//         let second = text[i + 1];
+
+//         switch (true) {
+//             case (first === 'a' || first === 'e' || first === 'i' || first === 'o' || first === 'u'):
+//                 switch (true) {
+//                     case (second === 'a' || second === 'e' || second === 'i' || second === 'o' || second === 'u'):
+//                         count++;
+//                         break;
+//                 }
+//                 break;
+//         }
+//     }
+
+//     return count;
+// }
+
+// let sentence = prompt("Enter a line of text:");
+// let doubleVowels = countDoubleVowels(sentence);
+// alert("Number of occurrences of two vowels in succession: " + doubleVowels);
+
+
+
+// **Question#8**
+
+// function tometers(km) {
+//     return km * 1000;
+// }
+
+
+// function tofeets(km) {
+//     return km * 3280;
+// }
+
+
+// function toinches(km) {
+//     return km * 39370.1;
+// }
+
+
+// function tocentimeters(km) {
+//     return km * 100000;
+// }
+
+// var km = prompt("Enter the distance B/W to cities in km: ");
+// console.log("The distane between two cities are: " + km );
+// console.log("Distane in meters: " + tometers(km) );
+// console.log("Distane in feets: " + tofeets(km) );
+// console.log("Distane in inches: " + toinches(km) );
+// console.log("Distane in centimeters: " + tocentimeters(km) );
+
+
+
+// **Question#9**
+
+// function calovertimepay(workedhours) {
+//     const normalhours = 40;
+//     const overtimerate = 12;
+//     var overtimepay = 0;
+
+//     if (workedhours > normalhours) {
+//         var overtimehours = workedhours - normalhours;  
+//        overtimepay = overtimehours * overtimerate
+//     }
+//     return overtimepay
+// }
+// var workedhours = 45
+// var overtimepay = calovertimepay(workedhours);
+
+// alert("Worked Hours: " + workedhours);
+// alert("Overtime pay: " + overtimepay +  " Rs")
+
+
+// **Question#10**
+
+// var amount = parseInt(prompt("Enter amoount tp withdraw: "));
+
+// var fivethousands = 0 , thousands = 0 , fivehundreds = 0 , hundreds = 0 , fifties = 0 , tens = 0;
+
+// fivethousands = Math.floor(amount/5000)
+// amount = amount % 5000;
+
+// thousands = Math.floor(amount/1000)
+// amount = amount % 1000;
+
+// fivehundreds = Math.floor(amount/500)
+// amount = amount % 500;
+
+// hundreds = Math.floor(amount/100)
+// amount = amount % 100;
+
+// fifties = Math.floor(amount/50)
+// amount = amount % 50;
+
+// tens = Math.floor(amount/10)
+// amount = amount % 10;
+
+// var result = " You will have "
+
+// var remaining = "<br>" + "The Remaining amount that can not be withdrawn: "
+
+// if (fivethousands > 0) result += fivethousands + " Fivethousands notes "
+
+// if (thousands > 0)  result += thousands + " thousands notes " 
+
+// if (fivehundreds > 0) result += fivehundreds + " fivehundreds notes "
+
+// if (hundreds > 0) result += hundreds + " hundreds notes "
+    
+// if (fifties > 0) result += fifties + " fifties notes "
+
+// if (tens > 0) result += tens + " tens notes "
+
+// if  (amount > 0) remaining += amount 
+
+// document.write(result)
+
+// document.write(remaining)
