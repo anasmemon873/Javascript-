@@ -1735,26 +1735,26 @@
 
 // **Question#3**
 //function removeVowels(sentence) {
-    let result = "";
-    let vowels = "aeiouAEIOU";
+//     let result = "";
+//     let vowels = "aeiouAEIOU";
 
-    for (let i = 0; i < sentence.length; i++) {
-        if (!vowels.includes(sentence[i])) {
-            result += sentence[i]; // add non-vowel characters
-        }
-    }
+//     for (let i = 0; i < sentence.length; i++) {
+//         if (!vowels.includes(sentence[i])) {
+//             result += sentence[i]; // add non-vowel characters
+//         }
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
-// Example usage
-//let sentence = prompt("Enter a sentence (max 25 characters):");
-//if (sentence.length > 25) {
-    //alert("Sentence is too long! Please enter 25 characters or less.");
-} //else {
-    let noVowels = removeVowels(sentence);
-   // alert("Sentence without vowels: " + noVowels);
-}
+// // Example usage
+// //let sentence = prompt("Enter a sentence (max 25 characters):");
+// //if (sentence.length > 25) {
+//     //alert("Sentence is too long! Please enter 25 characters or less.");
+// } //else {
+//     let noVowels = removeVowels(sentence);
+//    // alert("Sentence without vowels: " + noVowels);
+// }
 
 
 
@@ -1788,27 +1788,27 @@
 
 // **Question#5**
 //function countDoubleVowels(text) {
-    let count = 0;
-    text = text.toLowerCase(); // convert to lowercase for simplicity
+//     let count = 0;
+//     text = text.toLowerCase(); // convert to lowercase for simplicity
 
-    for (let i = 0; i < text.length - 1; i++) {
-        let first = text[i];
-        let second = text[i + 1];
+//     for (let i = 0; i < text.length - 1; i++) {
+//         let first = text[i];
+//         let second = text[i + 1];
 
-        // check if both characters are vowels using switch
-        switch (true) {
-            case (first === 'a' || first === 'e' || first === 'i' || first === 'o' || first === 'u'):
-                switch (true) {
-                    case (second === 'a' || second === 'e' || second === 'i' || second === 'o' || second === 'u'):
-                        count++;
-                        break;
-                }
-                break;
-        }
-    }
+//         // check if both characters are vowels using switch
+//         switch (true) {
+//             case (first === 'a' || first === 'e' || first === 'i' || first === 'o' || first === 'u'):
+//                 switch (true) {
+//                     case (second === 'a' || second === 'e' || second === 'i' || second === 'o' || second === 'u'):
+//                         count++;
+//                         break;
+//                 }
+//                 break;
+//         }
+//     }
 
-    return count;
-}
+//     return count;
+// }
 
 // Example usage
 //let sentence = prompt("Enter a line of text:");
